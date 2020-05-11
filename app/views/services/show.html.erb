@@ -1,0 +1,8 @@
+<h2><%= service.offered_title %></h2>
+
+
+<%= link_to 'Edit',  edit_service_path(@service) %>
+<%= link_to 'Back', services_path %>
+<%#= link_to 'Leave a Review', path(@service) %>
+<%= link_to "Remove", service_path(@service), method: :delete,
+                  data: { confirm: "Are you sure?" } %>

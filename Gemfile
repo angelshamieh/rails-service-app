@@ -30,6 +30,9 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 
+gem 'devise'
+
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

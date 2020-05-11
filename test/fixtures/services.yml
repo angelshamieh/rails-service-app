@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offered_title: MyString
+  needed_title: MyString
+  deadline: 2020-05-10
+  available_date: 2020-05-10
+  description_offered: MyText
+  description_needed: MyText
+  user: one
+  location: MyString
+
+two:
+  offered_title: MyString
+  needed_title: MyString
+  deadline: 2020-05-10
+  available_date: 2020-05-10
+  description_offered: MyText
+  description_needed: MyText
+  user: two
+  location: MyString

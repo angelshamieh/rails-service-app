@@ -1,0 +1,10 @@
+<h1>All services</h1>
+<ul>
+  <% @services.each do |service| %>
+    <li> Offered Service title: <%= service.offered_title %>
+         Needed Service title : <%= service.needed_title %>
+    </li>
+  <% end %>
+
+  <%= link_to 'Add new service',  new_service_path %>
+</ul>
