@@ -1,0 +1,11 @@
+<h1>Bookings#new</h1>
+<div class="container mt-5">
+  <p class="center"> Book it </p>
+  <%= simple_form_for [@service, @booking] do |f| %>
+    <%= f.input :status, as: :radio_buttons, collection: ['Accepted', 'Rejected', 'Pending', 'Processing'] %>
+    <%= f.submit "Submit", class: "btn btn-primary color" %>
+  <% end %>
+  <div class="text-center mt-4">
+      </div>
+
+  </div>
