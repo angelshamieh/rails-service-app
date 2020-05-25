@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :services do
     resources :bookings, only: [:new, :create, :show]
   end
+
+  resources :reviews, only: [:new, :create]
+
+  get 'dashboard', to: 'dashboard#profile', as: :dashboard
 end

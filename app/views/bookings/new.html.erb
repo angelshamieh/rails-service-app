@@ -1,10 +1,17 @@
-<h1>Bookings#new</h1>
+<h1>Exchange Service</h1>
+<h2>Service needed: <%=@service.needed_title%></h2>
 <div class="container mt-5">
   <p class="center"> Book it </p>
+
   <%= simple_form_for [@service, @booking] do |f| %>
     <%= f.input :status, as: :radio_buttons, collection: ['Accepted', 'Rejected', 'Pending', 'Processing'] %>
-    <%= f.submit "Submit", class: "btn btn-primary color" %>
   <% end %>
+
+    <%= simple_form_for [@service] do |f| %>
+    <%= f.input :available_dates %>
+    <%= f.submit "Submit", class: "btn btn-primary color" %>
+    <% end %>
+
   <div class="text-center mt-4">
       </div>
 

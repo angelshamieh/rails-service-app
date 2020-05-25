@@ -1,0 +1,4 @@
+<h2>My posts</h2>
+<% @user.services.order(created_at: :desc).each do |service| %>
+  <%= service.needed_title %>
+<%end %>

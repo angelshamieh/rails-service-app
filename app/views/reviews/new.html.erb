@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Add your Review</h2>
+  <%= simple_form_for(@review) do |f| %>
+    <%= f.input :content, placeholder: 'Feedback??', label:false %>
+    <%= f.input :rating, placeholder: 'Rating', label:false %>
+    <%= f.submit %>
+  <% end %>
+</div>
+

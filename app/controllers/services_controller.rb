@@ -1,19 +1,23 @@
 class ServicesController < ApplicationController
   before_action :find_services, only: [:show, :edit, :update, :destroy]
   def index
-    @services = Service.all
+    # @services = Service.all
+    @services = policy_scope(Service).order(created_at: :desc)
   end
 
   def show
+    authorize @service
   end
 
   def new
     @service = Service.new
+    authorize @service
   end
 
-  def create
+  def creates
     @service = Service.new(service_params)
     @service.user = current_user
+    authorize @service
     if @service.save
       redirect_to service_path(@service)
     else
@@ -38,10 +42,11 @@ class ServicesController < ApplicationController
 
   def find_services
     @service = Service.find(params[:id])
+    authorize @service
   end
 
   def service_params
     params.require(:service).permit(:needed_title, :offered_title, :deadline,
-     :available_dates, :description_offered, :description_needed, :location)
+     :available_dates, :description_offered, :description_needed, :location, :user_id)
   end
 end
