@@ -3,15 +3,19 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:service_id])
+    authorize @booking
+
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.service = @service
+    authorize @booking
     @booking.user = current_user
     if @booking.save
       redirect_to service_booking_path(@booking.service, @booking), notice: 'Your booking was successful'
@@ -22,9 +26,11 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.new(booking_params)
+    authorize @booking
   end
 
   def update
+    authorize @booking
     @booking = Booking.new(booking_params)
     @booking.service = @service
     @booking.update

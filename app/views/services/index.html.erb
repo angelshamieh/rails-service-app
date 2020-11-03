@@ -23,8 +23,11 @@
           <h2><strong>Needed:<%= service.needed_title %></strong></h2>
           <h2><u>Offered:<%= service.offered_title %></u></h2>
           <p><%= link_to service.location, service_path(service) %></p>
+          <%= link_to "Service page",service_path(service.id) %>
         </div>
       </div>
     </div>
   <%end %>
 </div>
+
+

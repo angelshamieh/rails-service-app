@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
   before_action :find_services, only: [:show, :edit, :update, :destroy]
+
   def index
     # @services = Service.all
     @services = policy_scope(Service).order(created_at: :desc)
@@ -14,7 +15,7 @@ class ServicesController < ApplicationController
     authorize @service
   end
 
-  def creates
+  def create
     @service = Service.new(service_params)
     @service.user = current_user
     authorize @service
@@ -30,10 +31,12 @@ class ServicesController < ApplicationController
 
   def update
     @service.update(service_params)
+    authorize @service
     redirect_to service_path(@service)
   end
 
   def destroy
+    authorize @service
     @service.destroy
     redirect_to services_path
   end
@@ -42,7 +45,6 @@ class ServicesController < ApplicationController
 
   def find_services
     @service = Service.find(params[:id])
-    authorize @service
   end
 
   def service_params
