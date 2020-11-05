@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :reviews, only: [:new, :create]
 
   get 'dashboard', to: 'dashboard#profile', as: :dashboard
+  patch 'update_user', to: 'dashboard#update', as: :update_settings
 end
