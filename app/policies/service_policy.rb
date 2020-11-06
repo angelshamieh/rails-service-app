@@ -20,7 +20,7 @@ class ServicePolicy < ApplicationPolicy
   end
 
   def destroy?
-    user_is_owner?
+    # user_is_owner?
   end
 
   private
