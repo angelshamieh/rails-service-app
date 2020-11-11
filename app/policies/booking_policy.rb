@@ -15,12 +15,12 @@ class BookingPolicy < ApplicationPolicy
 
   def update?
     # its boolean - true or false no need for the whole condition
-    user_is_owner?
+    # user_is_owner?
   end
 
   private
 
-  def user_is_owner?
-    record.user == user
-  end
+  # def user_is_owner?
+  #   record.user == user
+  # end
 end
