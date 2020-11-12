@@ -7,7 +7,8 @@ ruby '2.6.5'
 gem 'rails'
 gem 'sprockets'
 gem 'sprockets-rails'
-gem 'bootstrap', '~> 5.0.0.alpha1'
+# gem 'bootstrap', '~> 5.0.0.alpha1'
+gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use Puma as the app server
