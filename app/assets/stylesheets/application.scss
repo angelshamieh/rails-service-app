@@ -1,4 +1,5 @@
 // Graphical variables
+@import "../../../node_modules/bootstrap/scss/bootstrap";
 // @import "bootstrap";
 // @import "config/bootstrap_variables";
 @import "config/fonts";
@@ -7,7 +8,6 @@
 // External libraries
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "bootstrap/scss/bootstrap";
 
 // Your CSS partials
 @import "components/index";
