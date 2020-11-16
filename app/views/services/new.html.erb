@@ -1,6 +1,7 @@
 <div class="container">
   <h2>Add your service</h2>
   <%= simple_form_for(@service) do |f| %>
+    <%= f.input :photo, as: :file %>
     <%= f.input :needed_title, placeholder: 'Which service are you intersted in?', label:false %>
     <%= f.input :description_needed, placeholder: 'Describe the needed service', label:false %>
     <%= f.input :location, placeholder: 'Location', label:false %>
