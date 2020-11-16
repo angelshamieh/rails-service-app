@@ -20,6 +20,8 @@ gem 'sass-rails'
 gem 'uglifier'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+#env file - security
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use CoffeeScript for .coffee and views
 gem 'coffee-rails'
