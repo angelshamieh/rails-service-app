@@ -17,7 +17,11 @@
 <div class="cards-flex">
   <% @services.each do |service| %>
     <div class="card-trip">
-      <img src="https://res.cloudinary.com/degqxezsx/image/upload/v1589198407/Screen_Shot_2020-05-11_at_14.59.50_uzka0d.png" />
+      <% if service.photo.attached? %>
+        <%= cl_image_tag service.photo.key, height: 100, width: 100, crop: :fill%>
+      <% else %>
+        <img src="https://res.cloudinary.com/degqxezsx/image/upload/v1589198407/Screen_Shot_2020-05-11_at_14.59.50_uzka0d.png">
+      <% end %>
       <div class="card-trip-infos">
         <div>
           <h2><strong>Needed:<%= service.needed_title %></strong></h2>
