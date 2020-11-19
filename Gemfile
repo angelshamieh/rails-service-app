@@ -24,7 +24,7 @@ gem 'uglifier'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'cloudinary', '~> 1.16.0'
-
+gem 'pg_search', '~> 2.3.0'
 # Use CoffeeScript for .coffee and views
 gem 'coffee-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

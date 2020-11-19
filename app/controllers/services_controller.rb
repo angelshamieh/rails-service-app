@@ -2,8 +2,11 @@ class ServicesController < ApplicationController
   before_action :find_services, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @services = Service.all
-    @services = policy_scope(Service).order(created_at: :desc)
+    if params[:query].present?
+      @services = policy_scope(Service.search_by_offered_title_and_needed_title_and_location(params[:query]))
+    else
+      @services = policy_scope(Service).order(created_at: :desc)
+    end
   end
 
   def show
@@ -49,6 +52,6 @@ class ServicesController < ApplicationController
 
   def service_params
     params.require(:service).permit(:needed_title, :offered_title, :deadline,
-     :available_dates, :description_offered, :description_needed, :location, :user_id, :photo)
+     :available_dates, :description_offered, :description_needed, :location, :user_id, photos: [])
   end
 end

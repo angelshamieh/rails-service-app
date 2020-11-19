@@ -2,12 +2,20 @@
   <div class="container">
     <h1>Exchange Your Skill For <strong>Free</strong> Local Services!</h1>
     <p>Taking money out of the equation </p>
-    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <%= form_tag services_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a service"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+    <!-- <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
       <div class="search-form-control form-group">
         <input class="form-control string required" type="text" name="search[query]" id="search_query" />
         <button name="button" type="submit" class="btn btn-flat">
           <i class="fas fa-search"></i>
-        </button>
+        </button> -->
       </div>
     </form>
     <a class="btn btn-flat" href="#"><strong><%= link_to '+ Add a new service',  new_service_path %></a></strong>
@@ -17,8 +25,8 @@
 <div class="cards-flex">
   <% @services.each do |service| %>
     <div class="card-trip">
-      <% if service.photo.attached? %>
-        <%= cl_image_tag service.photo.key, height: 100, width: 100, crop: :fill%>
+      <% if service.photos.attached? %>
+          <%= cl_image_tag service.photos.first.key, height: 300, width: 400, crop: :fill %>
       <% else %>
         <img src="https://res.cloudinary.com/degqxezsx/image/upload/v1589198407/Screen_Shot_2020-05-11_at_14.59.50_uzka0d.png">
       <% end %>
